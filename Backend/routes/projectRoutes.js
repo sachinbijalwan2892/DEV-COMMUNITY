@@ -2,8 +2,11 @@ const express=require('express');
 
 const router=express.Router();
 
-router.get('/test',(req,res)=>{
-    res.send('Project route is working.');
-});
+const {createProject, getAllProjects, getProjectById,deleteProject, updateProject}=require('../controllers/projectController');
 
+router.post('/', createProject); 
+router.get('/:id', getProjectById)
+router.get('/', getAllProjects);
+router.delete('/:id', deleteProject);
+router.put('/:id', updateProject)
 module.exports=router;

@@ -17,6 +17,10 @@ const projectSchema=new mongoose.Schema(
         githubUrl: {
            type: String,
            required: true
+        },
+        createdBy: {
+           type: String,
+           required: true
         }
     }
 );
